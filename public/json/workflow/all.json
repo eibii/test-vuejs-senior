@@ -1,0 +1,16 @@
+{
+  "data": {
+    "workflow": [
+      {
+        "id": 1,
+        "name": "MemberZ",
+        "icon": "bi bi-person-fill"
+      },
+      {
+        "id": 2,
+        "name": "ConvertZ",
+        "icon": "bi bi-people-fill"
+      }
+    ]
+  }
+}

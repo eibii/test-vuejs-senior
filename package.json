@@ -1,0 +1,32 @@
+{
+  "name": "@eibii/test-vuejs-senior",
+  "version": "0.1.0",
+  "description": "Esse é um projeto referente há um desafio da Compay Z.",
+  "author": "ERC Dev <suporte@ercdev.com.br> (https://ercdev.com.br)",
+  "homepage": "https://ercdev.com.br",
+  "keywords": [
+    "nuxtjs",
+    "tailwind"
+  ],
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.4.1",
+    "@types/lodash": "^4.14.191",
+    "nuxt": "^3.2.2",
+    "nuxt-vitest": "^0.6.6",
+    "sass": "^1.58.3"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.7",
+    "bootstrap-icons": "^1.10.3",
+    "lodash": "^4.17.21",
+    "pinia": "^2.0.32",
+    "zod": "^3.20.6"
+  }
+}

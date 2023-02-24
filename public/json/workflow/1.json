@@ -1,0 +1,79 @@
+{
+  "workflow": {
+    "id": 1,
+    "name": "MemberZ",
+    "blocks": [
+      {
+        "name": "Usuário foi cadastrado?",
+        "icon": "bi bi-database-check",
+        "iconColor": "#0CA350",
+        "actions": [
+          {
+            "type": "check_user_registered",
+            "timeout": 60000,
+            "on_success": [
+              {
+                "type": "send_email",
+                "timeout": 0
+              },
+              {
+                "type": "send_sms",
+                "timeout": 180000
+              }
+            ],
+            "on_failure": [
+              {
+                "type": "persist_user",
+                "timeout": 0
+              },
+              {
+                "type": "check_user_registered",
+                "timeout": 0,
+                "on_success": [
+                  {
+                    "type": "send_email",
+                    "timeout": 0
+                  },
+                  {
+                    "type": "send_sms",
+                    "timeout": 180000
+                  }
+                ],
+                "on_failure": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Usuário não foi cadastrado?",
+        "icon": "bi bi-database-fill-x",
+        "iconColor": "#E91C2B",
+        "actions": [
+          {
+            "type": "persist_user",
+            "timeout": 0,
+            "on_success": [
+              {
+                "type": "check_user_registered",
+                "timeout": 0,
+                "on_success": [
+                  {
+                    "type": "send_email",
+                    "timeout": 0
+                  },
+                  {
+                    "type": "send_sms",
+                    "timeout": 180000
+                  }
+                ],
+                "on_failure": []
+              }
+            ],
+            "on_failure": []
+          }
+        ]
+      }
+    ]
+  }
+}

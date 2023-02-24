@@ -1,0 +1,122 @@
+{
+  "workflow": {
+    "id": 2,
+    "name": "ConvertZ",
+    "blocks": [
+      {
+        "name": "Cliente já foi atendido?",
+        "icon": "bi bi-database-check",
+        "iconColor": "#0CA350",
+        "actions": [
+          {
+            "type": "check_customer_served",
+            "timeout": 0,
+            "on_success": [
+              {
+                "type": "change_status",
+                "status": "Atendimento Finalizado",
+                "timeout": 60000,
+                "on_success": [
+                  {
+                    "type": "send_sms",
+                    "timeout": 180000
+                  },
+                  {
+                    "type": "send_email",
+                    "timeout": 240000
+                  }
+                ],
+                "on_failure": []
+              }
+            ],
+            "on_failure": [
+              {
+                "type": "wait",
+                "timeout": 180000,
+                "on_success": [
+                  {
+                    "type": "change_status",
+                    "status": "Em atendimento",
+                    "timeout": 0,
+                    "on_success": [
+                      {
+                        "type": "wait",
+                        "timeout": 300000,
+                        "on_success": [
+                          {
+                            "type": "change_status",
+                            "status": "Atendimento Finalizado",
+                            "timeout": 0,
+                            "on_success": [
+                              {
+                                "type": "send_sms",
+                                "timeout": 180000
+                              },
+                              {
+                                "type": "send_email",
+                                "timeout": 240000
+                              }
+                            ],
+                            "on_failure": []
+                          }
+                        ],
+                        "on_failure": []
+                      }
+                    ],
+                    "on_failure": []
+                  }
+                ],
+                "on_failure": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Cliente não foi atendido?",
+        "icon": "bi bi-database-fill-x",
+        "iconColor": "#E91C2B",
+        "actions": [
+          {
+            "type": "wait",
+            "timeout": 0,
+            "on_success": [
+              {
+                "type": "change_status",
+                "status": "Em atendimento",
+                "timeout": 180000,
+                "on_success": [
+                  {
+                    "type": "wait",
+                    "timeout": 300000,
+                    "on_success": [
+                      {
+                        "type": "change_status",
+                        "status": "Atendimento Finalizado",
+                        "timeout": 0,
+                        "on_success": [
+                          {
+                            "type": "send_sms",
+                            "timeout": 180000
+                          },
+                          {
+                            "type": "send_email",
+                            "timeout": 240000
+                          }
+                        ],
+                        "on_failure": []
+                      }
+                    ],
+                    "on_failure": []
+                  }
+                ],
+                "on_failure": []
+              }
+            ],
+            "on_failure": []
+          }
+        ]
+      }
+    ]
+  }
+}
