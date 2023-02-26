@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import { Notify, Message } from "@/types";
-import { isNumber } from "lodash";
 
 // Define a store que o Notify usa para processar a fila de notificações
 export const useNotify = defineStore("notifyStore", {
