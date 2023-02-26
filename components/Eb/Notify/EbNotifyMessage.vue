@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, watch, onMounted } from "vue";
-import type { Notify } from "@types";
+import type { Message } from "@/types";
 
 interface Props {
   idx: number;
-  message: Notify;
+  message: Message;
 }
 
 const emit = defineEmits(["onRemoveMessage"]);
@@ -57,6 +57,7 @@ onMounted(() => {
 
 <template>
   <div
+    data-idtest="notify-message"
     :class="`notify ${message.status}`"
     @mouseleave="isPaused = false"
     @mouseover="isPaused = true"

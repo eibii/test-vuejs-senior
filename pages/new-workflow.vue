@@ -72,13 +72,13 @@ const blocks = ref<Block[]>([
 </script>
 
 <template>
-  <div class="grid grid-cols-4 h-full">
+  <div class="flex flex-col lg:flex-row h-full">
     <!-- Lista de blocos -->
-    <div class="col-span-1 md:border-r p-2">
+    <div class="flex-none max-h-28 lg:max-w-xs md:border-r p-2">
       <BlockList :blocks="blocks" />
     </div>
     <!-- Lista de nós -->
-    <div class="col-span-3">
+    <div class="flex-1 w-full h-full">
       <Flow :nodes="nodes" />
     </div>
   </div>

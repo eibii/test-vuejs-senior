@@ -91,6 +91,7 @@ async function onAddNode(val: any) {
 
 <template>
   <div
+    data-idtest="flow"
     class="relative w-full h-full bg-repeat bg-auto overflow-x-auto"
     :style="{ backgroundImage: 'url(/svg/pattern-point.svg)' }"
   >

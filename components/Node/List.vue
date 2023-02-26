@@ -12,6 +12,7 @@ const props = withDefaults(defineProps<Props>(), {});
 
 <template>
   <div
+    data-idtest="node-list"
     :class="[
       'relative flex',
       { 'justify-center': nodes.length <= 1 },

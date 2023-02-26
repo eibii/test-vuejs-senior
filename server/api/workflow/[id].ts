@@ -1,4 +1,4 @@
-import { createRouter, defineEventHandler, useBase } from "h3";
+import { defineEventHandler } from "h3";
 import { z } from "zod";
 
 const baseActionSchema = z.object({
@@ -32,33 +32,27 @@ const schemaWorkflow = z.object({
 });
 
 export type Workflow = z.infer<typeof schemaWorkflow>;
-const router = createRouter();
 
 // Método find espera o parâmetro id, faz a busca do workflow no JSON
-router.get(
-  "/:id",
-  defineEventHandler(async (event) => {
-    try {
-      const config = useRuntimeConfig();
-      const id = event.context?.params?.id;
-      if (!id) {
-        return setResponseStatus(400, "Dados inválidos.");
-      }
-      const data = await fetch(
-        `${config.public.apiBase}/workflow/${id}.json`
-      ).then(async (res) => {
-        if (res.status === 200) {
-          const { workflow } = await res.json();
-          return workflow;
-        }
-
-        return {};
-      });
-      return schemaWorkflow.safeParse(data);
-    } catch (error) {
-      return setResponseStatus(500, "Tente novamente mais tarde");
+export default defineEventHandler(async (event) => {
+  try {
+    const config = useRuntimeConfig();
+    const id = event.context?.params?.id;
+    if (!id) {
+      return setResponseStatus(400, "Dados inválidos.");
     }
-  })
-);
+    const data = await fetch(
+      `${config.public.apiBase}/workflow/${id}.json`
+    ).then(async (res) => {
+      if (res.status === 200) {
+        const { workflow } = await res.json();
+        return workflow;
+      }
 
-export default useBase("/api/workflow", router.handler);
+      return {};
+    });
+    return schemaWorkflow.safeParse(data);
+  } catch (error) {
+    return setResponseStatus(500, "Tente novamente mais tarde");
+  }
+});

@@ -14,7 +14,10 @@ function onRemoveMessage(idx: number) {
 </script>
 
 <template>
-  <div class="fixed top-5 right-5 z-40 flex flex-col gap-2">
+  <div
+    data-idtest="notify"
+    class="fixed top-5 right-5 z-40 flex flex-col gap-2"
+  >
     <transition-group
       enter-active-class="duration-300 ease-out"
       enter-from-class="transform opacity-0"

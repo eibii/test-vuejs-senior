@@ -50,6 +50,7 @@ onBeforeMount(() => {
 
 <template>
   <div
+    data-idtest="popover"
     class="relative"
     @mouseover="isClick ? () => {} : (show = true)"
     @mouseleave="isClick ? () => {} : (show = false)"

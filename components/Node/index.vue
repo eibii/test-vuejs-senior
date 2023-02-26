@@ -94,6 +94,7 @@ function onAction(action: WorkflowAction) {
     }
   }, action.timeout);
 }
+
 // Depois que o componente for montado, executa a função recursiva de ações
 onMounted(() => {
   if (props.actions) {
@@ -106,11 +107,11 @@ onMounted(() => {
 
 <template>
   <div
+    data-idtest="node"
     :draggable="draggable"
     @dragstart="($event) => onStartDrag($event, props)"
     @dragleave.prevent="dragleave = false"
     @dragover.prevent="dragleave = true"
-    @dragenter.prevent
     @drop="onDrop"
     class="custom-card w-72 max-h-24 flex flex-col gap-1 p-2 divide-y divide-dashed group"
   >
@@ -139,6 +140,7 @@ onMounted(() => {
           <template #content="{ onClose }">
             <div class="flex justify-between">
               <button
+                data-excluir-node="nao"
                 type="button"
                 class="self-center flex gap-2 custom-animation bg-slate-200 hover:bg-slate-300 rounded-md px-4 py-1"
                 @click="onClose"
@@ -146,6 +148,7 @@ onMounted(() => {
                 <span class="self-center">Não</span>
               </button>
               <button
+                data-excluir-node="sim"
                 type="button"
                 class="self-center flex gap-2 custom-animation bg-green-500 hover:bg-green-600 text-white rounded-md px-4 py-1"
                 @click="
@@ -174,13 +177,18 @@ onMounted(() => {
       <!-- Botão para arrastar -->
       <div v-if="isDraggable" class="flex-none flex">
         <button
+          data-btn="drag"
           class="custom-animation self-center w-8 h-8 bg-slate-50 hover:bg-slate-100 rounded-lg group"
           type="button"
           @mouseover="draggable = true"
           @mouseleave="draggable = false"
+          @click="draggable = true"
         >
           <i
-            class="bi bi-grip-vertical group-hover:cursor-[grab] text-xl self-center"
+            :class="[
+              'bi group-hover:cursor-[grab] text-xl self-center',
+              { 'bi-arrows-move': draggable, 'bi-grip-vertical': !draggable },
+            ]"
           ></i>
         </button>
       </div>
@@ -201,6 +209,7 @@ onMounted(() => {
             <template #content="{ onClose }">
               <div class="flex justify-between">
                 <button
+                  data-excluir-node="nao"
                   type="button"
                   class="self-center flex gap-2 custom-animation bg-slate-200 hover:bg-slate-300 rounded-md px-4 py-1"
                   @click="onClose"
@@ -208,6 +217,7 @@ onMounted(() => {
                   <span class="self-center">Não</span>
                 </button>
                 <button
+                  data-excluir-node="sim"
                   type="button"
                   class="self-center flex gap-2 custom-animation bg-green-500 hover:bg-green-600 text-white rounded-md px-4 py-1"
                   @click="

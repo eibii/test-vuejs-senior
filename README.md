@@ -1,15 +1,60 @@
+# 🚀 Desafio - Compay Z
+
+Projeto ...
+
+## 👀 Visão geral
+
+### 🏞️ Captura de tela
+
+![](./screenshot.png)
+
+### 🔗 Links
+
+- [Em produção URL](https://lucent-cranachan-e98f3a.netlify.app/)
+
+## 👨🏻‍💻 Meu processo
+
+### 🛠️ Construído com
+
+- Semantic HTML5 markup
+- [Zod](https://nuxt.com/) - Validação de esquema TypeScript-first
+- [Nuxtjs](https://nuxt.com/) - Vue Framework
+- [Vitest](https://vitest.dev/) - Framework de Testes
+- [Tailwind](https://tailwindcss.com/) - Utility-first CSS framework
+
+## 🧞 Comandos
+
+Todos os comandos são executados a partir da raiz do projeto, a partir de um terminal:
+
+| Comando               | Ação                                                             |
+| :-------------------- | :--------------------------------------------------------------- |
+| `npm install`         | Instala dependências                                             |
+| `npm run dev`         | Inicia o servidor de desenvolvimento local em `localhost:3000`   |
+| `npm run build`       | Construa a aplicação pronta para produção no diretório `.output` |
+| `npm run generate`    | Pré-renderiza todas as rotas da aplicação                        |
+| `npm run preview`     | Visualize sua compilação localmente, antes de implantar          |
+| `npm run postinstall` | Cria um diretório `.nuxt` na aplicação e gera tipos              |
+| `npm run test`        | Inicia o Vitest no diretório atual                               |
+| `npm run coverage`    | Ativar relatório de cobertura                                    |
+
+## ✍🏼 Autor
+
+- [Me encontre](https://ercdev.com.br/)
+
+---
+
 # Desafio
 
 # O que preciso fazer?
 
 Vamos ser práticos e diretos, se você quer trabalhar conosco siga os passos abaixo:
 
-* Faça um "fork" desse projeto para sua conta GitHub.
-* Implemente o desafio descrito no tópico abaixo.
-* Faça um push para seu repositório com o desafio implementado.
-* Envie um email para (juniorabranches@compayz.com) com cópia para (marcosvinicius@compayz.com)
+- Faça um "fork" desse projeto para sua conta GitHub.
+- Implemente o desafio descrito no tópico abaixo.
+- Faça um push para seu repositório com o desafio implementado.
+- Envie um email para (juniorabranches@compayz.com) com cópia para (marcosvinicius@compayz.com)
   avisando que finalizou o desafio com a url do seu fork.
-* Caso houver qualquer dúvida, entre em contato também por email para sanar e você poder conseguir desenvolver sem empecilho ou falta de entendimento.
+- Caso houver qualquer dúvida, entre em contato também por email para sanar e você poder conseguir desenvolver sem empecilho ou falta de entendimento.
 
 # Desafio
 
@@ -19,14 +64,14 @@ Você deverá criar 1 aplicação conforme apresentada no gif abaixo, seguindo u
 
 **Requisitos:**
 
-Primeiro Workflow (Abaixo informaremos uma explicação mais detalhada dos Blocos do Workflow: 
+Primeiro Workflow (Abaixo informaremos uma explicação mais detalhada dos Blocos do Workflow:
 
 - Criar um workflow com o bloco principal chamado "MemberZ"
 - Esse Bloco será dividido em "Usuário foi cadastrado?" e "Usuário não foi cadastrado?"
 - Caso usuário cadastrado, após 1 minuto, uma ação de enviar email será realizada. Logo em seguida, depois de 3 minutos, um SMS será enviado.
 - Caso usuário não cadastrado, tente novamente a persistência do usuário, após checar novamente se o cadastro foi realizado ou não, segue o fluxo conforme positivo ou negativo.
 
-Segundo Workflow (Abaixo informaremos uma explicação mais detalhada dos Blocos do Workflow: 
+Segundo Workflow (Abaixo informaremos uma explicação mais detalhada dos Blocos do Workflow:
 
 - Criar um workflow com o bloco principal chamado "ConvertZ"
 - Esse Bloco será dividido em "Cliente já foi atendido?" e "Clienta não foi atendido?"
@@ -39,14 +84,14 @@ Segundo Workflow (Abaixo informaremos uma explicação mais detalhada dos Blocos
 
 #### FRONT-END
 
-* Vue.js 2 ou 3 com Nuxt
-* Typescript
+- Vue.js 2 ou 3 com Nuxt
+- Typescript
 
-- [Utilizar BootstrapVue](https://bootstrap-vue.org/)
+* [Utilizar BootstrapVue](https://bootstrap-vue.org/)
 
 **Recomendações gerais:**
 
-* Não utilize frameworks que não foram indicados
+- Não utilize frameworks que não foram indicados
 
 ### Arquitetura e documentação
 
@@ -56,16 +101,16 @@ No arquivo README do projeto explique o funcionamento e a arquitetura da soluç�
 
 Entre os critérios de avaliação estão:
 
-* Atenção aos detalhes
-* Facilidade de configuração do projeto
-* Performance
-* Código limpo e organização
-* Documentação de código
-* Documentação do projeto (readme)
-* Arquitetura
-* Boas práticas de desenvolvimento
-* Design Patterns
-* Testes unitários
+- Atenção aos detalhes
+- Facilidade de configuração do projeto
+- Performance
+- Código limpo e organização
+- Documentação de código
+- Documentação do projeto (readme)
+- Arquitetura
+- Boas práticas de desenvolvimento
+- Design Patterns
+- Testes unitários
 
 ## JSONs de exemplo a serem utilizados na aplicação
 
@@ -73,11 +118,10 @@ Entre os critérios de avaliação estão:
 
 ##### Metadata
 
-| Nome da Coluna | Observacao                                                |
-|----------------|-----------------------------------------------------------|
-| id             | Identificador do Bloco                                    |
-| name           | Nome                                                      |
-
+| Nome da Coluna | Observacao             |
+| -------------- | ---------------------- |
+| id             | Identificador do Bloco |
+| name           | Nome                   |
 
 ##### Example
 
@@ -96,7 +140,6 @@ Entre os critérios de avaliação estão:
     ]
   }
 }
-
 ```
 
 ### JSON dados de um Bloco
@@ -104,7 +147,7 @@ Entre os critérios de avaliação estão:
 ##### Metadata
 
 | Nome da Coluna | Observacao             |
-|----------------|------------------------|
+| -------------- | ---------------------- |
 | id             | Identificador do Bloco |
 | name           | Nome do Bloco          |
 | blocks         | Ações do Bloco         |
@@ -117,7 +160,7 @@ Este JSON representa um workflow chamado "MemberZ" com dois blocos: "Usuário fo
 
 O bloco "Usuário não foi cadastrado?" tem uma ação para tentar novamente a persistência do usuário. Se for bem sucedida, segue o fluxo como descrito anteriormente. Caso contrário, não há mais ações.
 
-````json
+```json
 {
   "workflow": {
     "id": 1,
@@ -193,15 +236,14 @@ O bloco "Usuário não foi cadastrado?" tem uma ação para tentar novamente a p
     ]
   }
 }
-
-````
+```
 
 **Explicação Segundo Bloco:**
 
-Este JSON representa um workflow chamado "ConvertZ" com dois blocos: "Cliente já foi atendido?" e "Cliente não foi atendido?". O bloco "Cliente já foi atendido?" tem uma ação para verificar se o cliente já foi atendido e, em caso afirmativo, mudar o status para "Atendimento Finalizado" após 1 minuto, enviar um SMS após 3 minutos e um e-mail de finalização de atendimento após 2 minutos. 
+Este JSON representa um workflow chamado "ConvertZ" com dois blocos: "Cliente já foi atendido?" e "Cliente não foi atendido?". O bloco "Cliente já foi atendido?" tem uma ação para verificar se o cliente já foi atendido e, em caso afirmativo, mudar o status para "Atendimento Finalizado" após 1 minuto, enviar um SMS após 3 minutos e um e-mail de finalização de atendimento após 2 minutos.
 Se o cliente não tiver sido atendido, uma ação de espera de 3 minutos será realizada antes de mudar o status para "Em atendimento". Após 5 minutos, o status será mudado para "Atendimento Finalizado", seguido por um envio de SMS após 3 minutos e um e-mail de
 
-````json
+```json
 {
   "workflow": {
     "id": 2,
@@ -320,6 +362,4 @@ Se o cliente não tiver sido atendido, uma ação de espera de 3 minutos será r
     ]
   }
 }
-
-
-````
+```
