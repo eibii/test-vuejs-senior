@@ -1,6 +1,7 @@
 # 🚀 Desafio - Compay Z
 
-Projeto ...
+Nesse desafio eu tomei a liberdade de ousar a não seguir os frameworks recomendados, o motivo de eu ter feito isso é poder demonstrar a minha capacidade de realizar desafios que me faz superar níveis de dificuldades, não tive o intuito de reinventar a roda, pelo fato que já existe há lib Flowy VueJS e nem desprezar o BootstrapVue, mas o que eu quero é poder mostrar que posso produzir as mesmas funcionalidades e ter a possibilidade de melhorar o que já existe, usando a minha expertise em VueJs e Tailwindcss, estou realizado com o resultado, não foi fácil chegar nele, onde senti mais dificuldades foi criar a estrutura do mapa mental tanto na estrutura de dados quanto a na componentização, trabalhar com matrizes sempre é desafiador por conta da complexidade, pelo limite de tempo ficou faltando finalizar a funcionalidade de drag end drop em dispositivos touch, que trabalham com outros tipos de eventos.
+Vale destacar as inúmeras possibilidades que esse projeto nos permite, com base nele dá para construir uma aplicação de fluxos, acompanhamento de tarefas(rotinas), kanban e muitos outros.
 
 ## 👀 Visão geral
 
@@ -10,17 +11,23 @@ Projeto ...
 
 ### 🔗 Links
 
-- [Em produção URL](https://lucent-cranachan-e98f3a.netlify.app/)
+- [Em produção URL](https://lambent-stardust-6aefb5.netlify.app/)
 
 ## 👨🏻‍💻 Meu processo
 
 ### 🛠️ Construído com
 
-- Semantic HTML5 markup
 - [Zod](https://nuxt.com/) - Validação de esquema TypeScript-first
 - [Nuxtjs](https://nuxt.com/) - Vue Framework
 - [Vitest](https://vitest.dev/) - Framework de Testes
-- [Tailwind](https://tailwindcss.com/) - Utility-first CSS framework
+- [Tailwindcss](https://tailwindcss.com/) - Utility-first CSS framework
+
+## 🧲 Variáveis de ambiente
+
+| Variável               | Valor padrão               |
+| :--------------------- | :------------------------- |
+| `NUXT_PUBLIC_API_BASE` | http://localhost:3000/json |
+| `NUXT_PUBLIC_APP_NAME` | Workflow Z                 |
 
 ## 🧞 Comandos
 
@@ -52,9 +59,6 @@ Vamos ser práticos e diretos, se você quer trabalhar conosco siga os passos ab
 - Faça um "fork" desse projeto para sua conta GitHub.
 - Implemente o desafio descrito no tópico abaixo.
 - Faça um push para seu repositório com o desafio implementado.
-- Envie um email para (juniorabranches@compayz.com) com cópia para (marcosvinicius@compayz.com)
-  avisando que finalizou o desafio com a url do seu fork.
-- Caso houver qualquer dúvida, entre em contato também por email para sanar e você poder conseguir desenvolver sem empecilho ou falta de entendimento.
 
 # Desafio
 

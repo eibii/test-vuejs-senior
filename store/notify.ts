@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
 import { Notify, Message } from "@/types";
-import { assign, isNumber } from "lodash";
 
 // Define a store que o Notify usa para processar a fila de notificações
 export const useNotify = defineStore("notifyStore", {
@@ -15,11 +14,11 @@ export const useNotify = defineStore("notifyStore", {
       if (payload) {
         const percent = 100;
         const duration = payload.duration || 4000;
-        this.messages.push(assign(payload, { percent, duration }));
+        this.messages.push({ ...payload, percent, duration });
       }
     },
     removeMessage(payload: number) {
-      if (isNumber(payload)) {
+      if (useIsNumber(payload)) {
         delete this.messages[payload];
       }
     },

@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia";
 import { useNotify } from "@/store/notify";
-import { isNumber } from "lodash";
 // Define a store
 const notify = useNotify();
 const { messages } = storeToRefs(notify);
 // Método para remover mensagem
 function onRemoveMessage(idx: number) {
-  if (isNumber(idx)) {
+  if (useIsNumber(idx)) {
     notify.removeMessage(idx);
   }
 }

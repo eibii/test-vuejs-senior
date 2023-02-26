@@ -20,9 +20,9 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.4.1",
     "@pinia/testing": "^0.0.15",
-    "@types/lodash": "^4.14.191",
     "@vitest/coverage-c8": "^0.29.1",
     "nuxt": "^3.2.2",
+    "nuxt-lodash": "^2.4.1",
     "nuxt-vitest": "^0.6.6",
     "sass": "^1.58.3",
     "vitest": "^0.29.1"
@@ -30,7 +30,6 @@
   "dependencies": {
     "@pinia/nuxt": "^0.4.7",
     "bootstrap-icons": "^1.10.3",
-    "lodash": "^4.17.21",
     "pinia": "^2.0.32",
     "zod": "^3.20.6"
   }

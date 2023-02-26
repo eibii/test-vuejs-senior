@@ -939,9 +939,16 @@
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.11.tgz"
   integrity sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==
 
-"@types/lodash@^4.14.191":
+"@types/lodash-es@^4.17.6":
+  version "4.17.6"
+  resolved "https://registry.yarnpkg.com/@types/lodash-es/-/lodash-es-4.17.6.tgz#c2ed4c8320ffa6f11b43eb89e9eaeec65966a0a0"
+  integrity sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
   version "4.14.191"
-  resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.191.tgz"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.191.tgz#09511e7f7cba275acd8b419ddac8da9a6a79e2fa"
   integrity sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==
 
 "@types/node@*":
@@ -3395,6 +3402,11 @@ locate-path@^6.0.0:
   dependencies:
     p-locate "^5.0.0"
 
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz"
@@ -3895,6 +3907,15 @@ nuxi@3.2.2:
   integrity sha512-JqPJqwfzQCVrjkMh+9Dd3q4qu7wYbmr+39SfjC6LL1oTNLFUjvjHG42tFJBDVHO+GImAo/kNjWGp2N/Jwo8/ag==
   optionalDependencies:
     fsevents "~2.3.2"
+
+nuxt-lodash@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/nuxt-lodash/-/nuxt-lodash-2.4.1.tgz#be34a5dd8fa3ae16a20b3b9c7e4ef75386ff9030"
+  integrity sha512-Z1c2eBApJsP4m3RMnZWGDYQ7GiNCrWuLH1PGpLe/7OihjOOtWUN+0sf6NQ9STvUbL4TpXisJ/4hKVns7+wkh4Q==
+  dependencies:
+    "@nuxt/kit" "^3.0.0"
+    "@types/lodash-es" "^4.17.6"
+    lodash-es "^4.17.21"
 
 nuxt-vitest@^0.6.6:
   version "0.6.6"
