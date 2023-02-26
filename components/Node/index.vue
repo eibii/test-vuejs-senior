@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useNotify } from "@/store/notify";
-import { map, delay } from "lodash";
 import type { WorkflowAction } from "@/server/api/workflow/[id]";
 export interface Node {
   idx?: string;
@@ -59,7 +58,7 @@ function twoDigit(val: number) {
 // Método recursivo para o disparo das ações contidas no nó
 function onAction(action: WorkflowAction) {
   // Função que faz o controle do intervalo de disparo
-  delay(async () => {
+  useDelay(async () => {
     const dateTime = new Date();
     const time = `${twoDigit(dateTime.getHours())}:${twoDigit(
       dateTime.getMinutes()
@@ -81,7 +80,7 @@ function onAction(action: WorkflowAction) {
         status: "success",
       });
       // Percorre o array de ações bem sucedidas
-      map(action.on_success, (success) => onAction(success));
+      useMap(action.on_success, (success) => onAction(success));
     } else {
       // Função que dispara a notificação
       notify.setMessage({
@@ -90,7 +89,7 @@ function onAction(action: WorkflowAction) {
         status: "danger",
       });
       // Percorre o array de ações ao falhar
-      map(action.on_failure, (failure) => onAction(failure));
+      useMap(action.on_failure, (failure) => onAction(failure));
     }
   }, action.timeout);
 }
@@ -98,7 +97,7 @@ function onAction(action: WorkflowAction) {
 // Depois que o componente for montado, executa a função recursiva de ações
 onMounted(() => {
   if (props.actions) {
-    map(props.actions, (action) => {
+    useMap(props.actions, (action) => {
       onAction(action);
     });
   }

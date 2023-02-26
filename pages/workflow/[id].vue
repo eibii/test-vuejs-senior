@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { Workflow } from "@/server/api/workflow/[id]";
 import type { Node } from "@/components/Node/index.vue";
-import { map } from "lodash";
 const $route = useRoute();
 // Lista de blocos(nós)
 const nodes = ref<Node[]>([]);
@@ -22,7 +21,7 @@ if (success) {
       title: data.name,
       isRemove: false,
       isDraggable: false,
-      nodes: map(data.blocks, (block, i) => {
+      nodes: useMap(data.blocks, (block, i) => {
         return {
           id: `${i}`,
           icon: block.icon || "",

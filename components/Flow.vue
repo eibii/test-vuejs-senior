@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Node } from "./Node/index.vue";
-import { map, filter, omit } from "lodash";
 
 interface Props {
   nodes: Node[];
@@ -9,7 +8,7 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {});
 // Lista de nós
 const internalKnots = ref<Node[]>(
-  map(props.nodes, (o: any) => ({ ...o, nodes: o.nodes || [] }))
+  useMap(props.nodes, (o: any) => ({ ...o, nodes: o.nodes || [] }))
 );
 // Método para excluir nós
 function onRemove(val: Node) {
@@ -19,12 +18,12 @@ function onRemove(val: Node) {
   // Condição para verificar a profundidade dos nós
   if (idxs.length > 2) {
     let arr: any = internalKnots.value[idxs[0]];
-    map(idxs, (idx, i: number) => {
+    useMap(idxs, (idx, i: number) => {
       if (i > 0) {
         // Condição para encontrar o nó na matrix de nós
         if (i + 1 === idxs.length) {
           // Filta os nós, excluindo o nó desejado
-          arr.nodes = filter(arr.nodes, (o, i) => {
+          arr.nodes = useFilter(arr.nodes, (o, i) => {
             return `${i}` !== `${idx}`;
           });
         } else {
@@ -34,7 +33,7 @@ function onRemove(val: Node) {
     });
   } else {
     // Filta os nós, excluindo o nó desejado
-    internalKnots.value[idxs[0]].nodes = filter(
+    internalKnots.value[idxs[0]].nodes = useFilter(
       internalKnots.value[idxs[0]].nodes,
       (o, i) => `${i}` !== `${idxs[1]}`
     );
@@ -54,7 +53,7 @@ async function onAddNode(val: any) {
   if (val.item?.idxMove) {
     idxMove = val.item?.idxMove;
     const strIdx = `idx":"${val.item?.idxMove}`;
-    let str: any = JSON.stringify(omit(val.item, "idxMove"));
+    let str: any = JSON.stringify(useOmit(val.item, "idxMove"));
     // Modifica a propriedade idx em todos os nós abaixo do nó selecionado, atribuindo ha do nó pai
     str = str.replaceAll(strIdx, `idx":"${val.parent.idx}`);
     val.item = JSON.parse(str);
@@ -62,7 +61,7 @@ async function onAddNode(val: any) {
   // Condição para verificar a profundidade dos nós
   if (idxsParent.length > 1) {
     let arr: any = internalKnots.value[idxsParent[0]];
-    map(idxsParent, (idx, i: number) => {
+    useMap(idxsParent, (idx, i: number) => {
       if (i > 0) {
         arr = arr.nodes[idx];
         // Condição para encontrar o nó na matrix de nós
