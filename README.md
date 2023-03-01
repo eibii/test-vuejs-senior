@@ -17,7 +17,7 @@ Vale destacar as inúmeras possibilidades que esse projeto nos permite, com base
 
 ### 🛠️ Construído com
 
-- [Zod](https://nuxt.com/) - Validação de esquema TypeScript-first
+- [Zod](https://zod.dev/) - Validação de esquema TypeScript-first
 - [Nuxtjs](https://nuxt.com/) - Vue Framework
 - [Vitest](https://vitest.dev/) - Framework de Testes
 - [Tailwindcss](https://tailwindcss.com/) - Utility-first CSS framework
